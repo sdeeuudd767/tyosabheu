@@ -1,0 +1,56 @@
+{
+    "inbounds": [
+    {
+      "port": 8081,
+      "listen":"0.0.0.0",
+      "protocol": "vless",
+      "settings": {
+        "decryption": "none",
+        "clients": [
+          {
+            "id": "27fd6ca6-2d19-4de0-850c-6c05482c3c88"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+	    "security": "none",
+        "wsSettings": {
+        "path": "/$AUUID-vless"
+        }
+      }
+    },
+    {
+      "port": 8082,
+      "listen": "0.0.0.0",
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "27fd6ca6-2d19-4de0-850c-6c05482c3c88",
+			"alterId": 0
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/$AUUID-vmess"
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "tag": "block"
+    }
+  ],
+  "transport": {},
+  "stats": {},
+  "reverse": {}
+}
